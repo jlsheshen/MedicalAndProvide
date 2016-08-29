@@ -16,21 +16,28 @@
         android:background="@color/title_color"
         android:textSize="@dimen/big_title_font_size"
         />
-
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/main_flay"
-        >
-        <android.support.v4.view.ViewPager
+        android:layout_height="match_parent"
+        android:id="@+id/main_vp"
+        android:visibility="gone"
+        />
+
+
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/main_vp"
-            />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/main_flay"
+            >
 
 
-    </FrameLayout>
+
+        </FrameLayout>
+
+
+
 
     <RadioGroup
         android:layout_width="match_parent"

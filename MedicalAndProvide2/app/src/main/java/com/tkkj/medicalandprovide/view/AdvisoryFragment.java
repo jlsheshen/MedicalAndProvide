@@ -1,8 +1,11 @@
 package com.tkkj.medicalandprovide.view;
 
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.tkkj.medicalandprovide.R;
 import com.tkkj.medicalandprovide.adapter.AdvisoryAdapter;
@@ -42,12 +45,19 @@ public class AdvisoryFragment extends BaseFragment{
         datas.add("测试数据第四行");
         advisoryAdapter = new AdvisoryAdapter(BaseApplication.getContext());
         advisoryAdapter.setData(datas);
+        listView.setAdapter(advisoryAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(BaseApplication.getContext(), datas.get(i), Toast.LENGTH_SHORT).show();
+                FragmentTransaction traMain = getActivity().getSupportFragmentManager().beginTransaction();
+                traMain.replace(R.id.main_vp,new DetailAdxisoryFragment());
+                //提交业务
+                traMain.commit();
 
             }
         });
+
 
 
     }
