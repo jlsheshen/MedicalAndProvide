@@ -23,10 +23,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Override
     protected void initView() {
 
-        FragmentTransaction traMain = getSupportFragmentManager().beginTransaction();
-        traMain.replace(R.id.main_vp, new AdvisoryFragment());
-        //提交业务
-        traMain.commit();
+
         advisoryBtn= (RadioButton) bindView(R.id.main_advisory);
         patientBtn = (RadioButton) bindView(R.id.main_patiented);
         orderBtn = (RadioButton) bindView(R.id.main_order);
@@ -54,6 +51,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         fragmentList.add(new CallFragment());
         fragmentList.add(new MyFragment());
 
+        FragmentTransaction traMain = getSupportFragmentManager().beginTransaction();
+        traMain.replace(R.id.main_flay,fragmentList.get(2));
+        //提交业务
+        traMain.commit();
+
     }
 
     @Override
@@ -68,23 +70,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         switch (v.getId()){
             case R.id.main_advisory:
-                traReplace.replace(R.id.main_vp,new AdvisoryFragment());
+                traReplace.replace(R.id.main_flay,fragmentList.get(0));
 
                 Log.d("MainActivity", "onClick: 触发点击时间");
                 break;
             case R.id.main_patiented:
-                traReplace.replace(R.id.main_vp,fragmentList.get(1));
+                traReplace.replace(R.id.main_flay,fragmentList.get(1));
                 Log.d("MainActivity", "onClick: 触发点击时间");
 
                 break;
             case R.id.main_order:
-                traReplace.replace(R.id.main_vp,new OrderFragment());
+                traReplace.replace(R.id.main_flay,fragmentList.get(2));
                 break;
             case R.id.main_call:
-                traReplace.replace(R.id.main_vp,fragmentList.get(3));
+                traReplace.replace(R.id.main_flay,fragmentList.get(3));
                 break;
             case R.id.main_my:
-                traReplace.replace(R.id.main_vp,fragmentList.get(4));
+                traReplace.replace(R.id.main_flay,fragmentList.get(4));
                 break;
 
         }

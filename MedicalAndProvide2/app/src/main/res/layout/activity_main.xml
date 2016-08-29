@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.MainActivity">
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -45,7 +44,6 @@
             android:background="@drawable/main_advisory_btn_select"
             android:id="@+id/main_advisory"
             style="@style/RadioBtnStyle"
-            android:checked="true"
 
             />
         <RadioButton
@@ -57,6 +55,8 @@
             android:background="@drawable/main_order_btn_select"
             android:id="@+id/main_order"
             style="@style/RadioBtnStyle"
+            android:checked="true"
+
             />
         <RadioButton
             android:background="@drawable/main_call_btn_select"
