@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 
 import com.tkkj.medicalandprovide.R;
@@ -16,6 +17,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity implements View.OnClickListener{
     RadioButton advisoryBtn,patientBtn,orderBtn,callBtn,myBtn;
     List<Fragment> fragmentList;
+    FrameLayout fristFragment,secondFragment;
     @Override
     public int initLayout() {
         return R.layout.activity_main;
@@ -29,6 +31,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         orderBtn = (RadioButton) bindView(R.id.main_order);
         callBtn = (RadioButton) bindView(R.id.main_call);
         myBtn = (RadioButton) bindView(R.id.main_my);
+        fristFragment = (FrameLayout) bindView(R.id.main_flay);
+        secondFragment  = (FrameLayout) bindView(R.id.main_vp);
 
         advisoryBtn.setOnClickListener(this);
         patientBtn.setOnClickListener(this);
@@ -66,6 +70,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        if (secondFragment.getVisibility() == View.VISIBLE){
+            secondFragment.setVisibility(View.GONE);
+            fristFragment.setVisibility(View.VISIBLE);
+        }else {}
         FragmentTransaction traReplace = getSupportFragmentManager().beginTransaction();
 
         switch (v.getId()){
@@ -97,7 +105,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     public void onBackPressed() {
+        if (secondFragment.getVisibility() == View.VISIBLE){
+            secondFragment.setVisibility(View.GONE);
+            fristFragment.setVisibility(View.VISIBLE);
+            return;
+
+        }else {
+
+        }
+
         super.onBackPressed();
+    }
+    private void secondFragmentIsShowing(){
 
     }
+
+
 }

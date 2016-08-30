@@ -18,25 +18,26 @@
         />
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main_vp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:visibility="gone"
+        android:id="@+id/main_thread">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:id="@+id/main_vp"
         />
-
-
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:id="@+id/main_flay"
             >
-
-
-
         </FrameLayout>
 
-
+    </FrameLayout>
 
 
     <RadioGroup

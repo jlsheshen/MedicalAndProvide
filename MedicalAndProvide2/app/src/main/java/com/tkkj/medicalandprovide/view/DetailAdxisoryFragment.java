@@ -11,7 +11,7 @@ import com.tkkj.medicalandprovide.base.BaseFragment;
 public class DetailAdxisoryFragment extends BaseFragment {
     @Override
     protected int setLayout() {
-        return R.layout.fragment_order;
+        return R.layout.fragment_advisory_detail;
     }
 
     @Override

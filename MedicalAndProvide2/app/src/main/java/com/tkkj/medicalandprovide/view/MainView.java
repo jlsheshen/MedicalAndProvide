@@ -6,7 +6,7 @@ import java.util.List;
 
 
 
-public interface NewMvpView extends BaseView {
+public interface MainView extends BaseView {
     void setListItem(List<String> data);
     void showMessage(String message);
 }

@@ -1,7 +1,6 @@
 package com.tkkj.medicalandprovide.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,6 @@ public class AdvisoryAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        Log.d("AdvisoryAdapter", "走进adapter");
         ViewHolder viewHolder = null;
         if (view == null){
             view = LayoutInflater.from(context).inflate(R.layout.item_one_string_list,viewGroup,false);

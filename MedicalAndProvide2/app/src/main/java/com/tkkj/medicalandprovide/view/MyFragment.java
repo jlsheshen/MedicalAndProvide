@@ -12,7 +12,7 @@ public class MyFragment extends BaseFragment{
 
     @Override
     protected int setLayout() {
-        return R.layout.fragment_advisory;
+        return R.layout.fragment_one_lv;
     }
 
     @Override

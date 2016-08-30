@@ -1,7 +1,6 @@
 package com.tkkj.medicalandprovide.view;
 
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -25,7 +24,7 @@ public class AdvisoryFragment extends BaseFragment{
     AdvisoryAdapter advisoryAdapter;
     @Override
     protected int setLayout() {
-        return R.layout.fragment_advisory;
+        return R.layout.fragment_one_lv;
     }
 
     @Override
@@ -51,6 +50,8 @@ public class AdvisoryFragment extends BaseFragment{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(BaseApplication.getContext(), datas.get(i), Toast.LENGTH_SHORT).show();
                 FragmentTransaction traMain = getActivity().getSupportFragmentManager().beginTransaction();
+                getActivity().findViewById(R.id.main_vp).setVisibility(View.VISIBLE);
+                getActivity().findViewById(R.id.main_flay).setVisibility(View.GONE);
                 traMain.replace(R.id.main_vp,new DetailAdxisoryFragment());
                 //提交业务
                 traMain.commit();
