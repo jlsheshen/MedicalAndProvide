@@ -1,7 +1,9 @@
 package com.tkkj.medicalandprovide.view;
 
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.tkkj.medicalandprovide.R;
@@ -16,7 +18,7 @@ import java.util.List;
 /**
  * Created by jl on 2016/8/26.
  */
-public class PatientFragment extends BaseFragment{
+public class PatientFragment extends BaseFragment implements View.OnClickListener{
     ListView listView;
     PatientAdapter patientAdapter;
 
@@ -48,7 +50,26 @@ public class PatientFragment extends BaseFragment{
         listView.setAdapter(patientAdapter);
         View view = View.inflate(BaseApplication.getContext(),R.layout.item_patient_list,null);
         listView.addHeaderView(view);
+        Log.d("PatientFragment", "点击事件执勤啊");
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.d("PatientFragment", "点击事件触发");
+                FragmentTransaction traMain = getActivity().getSupportFragmentManager().beginTransaction();
+                getActivity().findViewById(R.id.main_vp).setVisibility(View.VISIBLE);
+                getActivity().findViewById(R.id.main_flay).setVisibility(View.GONE);
+                traMain.replace(R.id.main_vp,new PatientDetail());
+
+                traMain.commit();
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }

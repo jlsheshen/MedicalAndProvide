@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity implements View.OnClickListener{
     RadioButton advisoryBtn,patientBtn,orderBtn,callBtn,myBtn;
     List<Fragment> fragmentList;
-    FrameLayout fristFragment,secondFragment;
+    FrameLayout fristFragment,secondFragment,thridFragment;
     @Override
     public int initLayout() {
         return R.layout.activity_main;
@@ -33,6 +33,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         myBtn = (RadioButton) bindView(R.id.main_my);
         fristFragment = (FrameLayout) bindView(R.id.main_flay);
         secondFragment  = (FrameLayout) bindView(R.id.main_vp);
+        thridFragment = (FrameLayout) bindView(R.id.main_thrid);
 
         advisoryBtn.setOnClickListener(this);
         patientBtn.setOnClickListener(this);
@@ -70,10 +71,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        if (secondFragment.getVisibility() == View.VISIBLE){
+
+        if( thridFragment.getVisibility() == View.VISIBLE) {
+            thridFragment.setVisibility(View.GONE);
+            fristFragment.setVisibility(View.VISIBLE);
+
+
+        } else if (secondFragment.getVisibility() == View.VISIBLE){
             secondFragment.setVisibility(View.GONE);
             fristFragment.setVisibility(View.VISIBLE);
-        }else {}
+        }
         FragmentTransaction traReplace = getSupportFragmentManager().beginTransaction();
 
         switch (v.getId()){
@@ -105,12 +112,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     public void onBackPressed() {
-        if (secondFragment.getVisibility() == View.VISIBLE){
+        if( thridFragment.getVisibility() == View.VISIBLE) {
+            thridFragment.setVisibility(View.GONE);
+            secondFragment.setVisibility(View.VISIBLE);
+            return;
+        } else if (secondFragment.getVisibility() == View.VISIBLE){
             secondFragment.setVisibility(View.GONE);
             fristFragment.setVisibility(View.VISIBLE);
             return;
-
-        }else {
 
         }
 

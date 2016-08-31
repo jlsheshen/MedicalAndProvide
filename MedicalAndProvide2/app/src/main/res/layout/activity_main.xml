@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,13 +18,28 @@
         android:textColor="@color/white"
         android:background="@color/title_color"
         android:textSize="@dimen/big_title_font_size"
+        android:id="@+id/title"
         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/title"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:visibility="gone"
+            android:text="保存"
+            android:id="@+id/my_save"
+            />
+    </RelativeLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:visibility="gone"
-        android:id="@+id/main_thread">
+        android:id="@+id/main_thrid">
+    </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -37,7 +55,7 @@
             >
         </FrameLayout>
 
-    </FrameLayout>
+
 
 
     <RadioGroup

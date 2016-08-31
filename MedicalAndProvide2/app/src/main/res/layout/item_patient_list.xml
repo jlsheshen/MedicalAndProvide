@@ -17,9 +17,7 @@
         android:textColor="@color/black"
         />
         <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="@color/black"
+            style="@style/VerticalLine"
             />
     <TextView
         android:layout_width="0dp"
@@ -30,9 +28,7 @@
         android:id="@+id/patient_phone"
         />
         <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="@color/black"
+            style="@style/VerticalLine"
             />
     <TextView
         android:layout_width="0dp"
@@ -42,13 +38,10 @@
         android:id="@+id/patient_disease"
         android:textColor="@color/black"
 
-
         />
     </LinearLayout>
     <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/black"
+        style="@style/HorizontalLine"
         />
 
 
